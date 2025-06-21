@@ -20,7 +20,41 @@ The Pi runs an image of Raspberry Pi OS (32-bit), which is a port of Debian Book
 
 ## Code  
 There are two programs used for this project on the Pi. The Python code facilitates the connection with ThingsBoard using the `tb-mqtt-client` library installed in a Python 3 virtual environment. It also controls the second program, written in C, by starting, reading, or closing it depending on actions triggered in ThingsBoard.  
-The second program establishes the UART connection and communicates with the sensor, telling it what to do. This C code uses the driver written in C from this GitHub repository: [embedded-uart-sps](https://github.com/Sensirion/embedded-uart-sps/blob/master/docs/getting-started-on-the-raspberry-pi.md).
+The second program establishes the UART connection and communicates with the sensor, telling it what to do. This C code uses the driver written in C from this GitHub repository: [embedded-uart-sps](https://github.com/Sensirion/embedded-uart-sps/blob/master/docs/getting-started-on-the-raspberry-pi.md).  
+To adapt the Python program to your ThingsBoard setup, change the values of the following variables at the start of the code with your respective values. For more details, see this link: [Pi Zero W on ThingsBoard](https://thingsboard.io/docs/devices-library/raspberry-pi-zero-w/).  
+Code:  
+  
+```
+ACCESS_TOKEN = "7tUZaVu6iZFxLUcYRc53"
+THINGSBOARD_SERVER = 'demo.thingsboard.io'
+```
+
+## ThingsBoard
+
+The custom dashboard I created is saved as **"proiectdashboard.json"**. It provides a comprehensive view of both the device and sensor data. The dashboard includes the following sections:
+
+- **Raspberry Pi Information**  
+  Displays system metrics such as:  
+  - Local IP address  
+  - Average system load
+
+- **Device Information (ThingsBoard)**  
+  Shows key details about the registered device:  
+  - Uptime  
+  - Connection status (active/inactive)  
+  - Label and device type  
+  - Creation timestamp
+
+- **Sensor Data (SPS30)**  
+  Provides real-time air quality measurements:  
+  - Firmware version  
+  - Mass concentration: PM1, PM2.5, PM10  
+  - Number concentration: PM0.5, PM1, PM2.5, PM10  
+  - Typical particle size
+
+- **Control Panel**  
+  Includes a button to **start** or **stop** the background process that communicates with the sensor.
+
 
 ## Bibliography / Resources  
 **Documentation / Datasheets:**  
