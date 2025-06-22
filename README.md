@@ -21,7 +21,7 @@ The Pi runs an image of Raspberry Pi OS (32-bit), which is a port of Debian Book
 ## Code  
 There are two programs used for this project on the Pi. The Python code facilitates the connection with ThingsBoard using the `tb-mqtt-client` library installed in a Python 3 virtual environment. It also controls the second program, written in C, by starting, reading, or closing it depending on actions triggered in ThingsBoard.  
 The second program establishes the UART connection and communicates with the sensor, telling it what to do. This C code uses the driver written in C from this GitHub repository: [embedded-uart-sps](https://github.com/Sensirion/embedded-uart-sps/blob/master/docs/getting-started-on-the-raspberry-pi.md).  
-To adapt the Python program to your ThingsBoard setup, change the values of the following variables at the start of the code with your respective values. For more details, see this link: [Pi Zero W on ThingsBoard](https://thingsboard.io/docs/devices-library/raspberry-pi-zero-w/).  
+To adapt the Python program to your ThingsBoard setup, change the values of the following variables at the start of the code with your respective values. For more details, see this link: [Pi Zero W on ThingsBoard](https://thingsboard.io/docs/devices-library/raspberry-pi-zero-w/). For the C code, use the **"Makefile"** and **"sensirion_uart_implementation.c"** file provided in this repository.  
 Code:  
   
 ```
