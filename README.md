@@ -11,11 +11,11 @@ My project is an air quality sensor that shows the concentration of particulate 
 
 The Pi runs an image of Raspberry Pi OS (32-bit), which is a port of Debian Bookworm.  
 **The changes from the clean install are:**  
-- SSH credentials have been changed; the new username and password are both **"student"** (the hostname remains unchanged)  
+- SSH credentials have been changed; the new username and password (the hostname remains unchanged)  
 - Serial interface activated without terminal on the UART pins  
 - Bluetooth disabled in `config.txt` to free the ttyAMA0 port. This provides a better connection to the sensor compared to using the miniUART, which depends on the processor clock and may be unstable.  
 - Gadget mode is enabled, allowing you to connect to the Pi via USB using the mini-USB port between the mini-HDMI and the other mini-USB port. You don’t necessarily need to power it via the PowerIn port if you don’t use the sensor.  
-- The Pi has a Samba shared folder named **"smb_share"** with the credentials **"student"** (username and password)   
+- The Pi has a Samba shared folder named **"smb_share"**   
 - Other: VNC is active on the Pi, but I don’t recommend it due to high latency.
 
 ## Code  
