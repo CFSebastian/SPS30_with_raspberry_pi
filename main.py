@@ -197,14 +197,22 @@ def sync_state(result, exception=None):
 def main():
     global client
     client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN)
+    #client._client.will_set("v1/devices/me/attributes", payload=json.dumps({"connected": False}), retain=True)
     client.connect()
+    #client.send_attributes({"connected": True})
     client.set_server_side_rpc_request_handler(rpc_callback)
 
-    while not client.stopped:
-        attributes, telemetry = get_data()
-        client.send_attributes(attributes)
-        client.send_telemetry(telemetry)
-        time.sleep(15)
+    try:
+        while not client.stopped:
+            attributes, telemetry = get_data()
+            client.send_attributes(attributes)
+            client.send_telemetry(telemetry)
+            time.sleep(15)
+    except KeyboardInterrupt:
+        print("Deconectatre de la ThingsBoard...")
+    finally:
+        #client.send_attributes({"connected": False})
+        client.disconnect()
 
 if __name__ == '__main__':
     if ACCESS_TOKEN != "TEST_TOKEN":
