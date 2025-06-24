@@ -134,7 +134,7 @@
           "padding": "0px",
           "settings": {
             "useMarkdownTextFunction": false,
-            "markdownTextPattern": "##### ${entityName}\n\n| **Attribute**    | **Current value**      |\n|:-:|:-:|\n| **Local IP**     | ${ip_address}          |\n| **Active**       | ${active}              |\n| **Uptime**       | ${boot_time} hours     |\n| **Avg. load**    | ${avg_load} %          |\n|**SPS Firmware**  |${FW}                  |\n\n###### Device info\n\n**Device label** - ${entityLabel}   \n**Device type**- ${Type}  \n**Created time** - {{ ${createdTime} | date:'full' }}\n\n",
+            "markdownTextPattern": "##### ${entityName}\n\n| **Attribute**    | **Current value**      |\n|:-:|:-:|\n| **Local IP**     | ${ip_address}          |\n| **Active**       | ${active}              |\n| **Uptime**       | ${boot_time}     |\n| **Avg. load**    | ${avg_load} %          |\n|**SPS Firmware**  |${FW}                  |\n\n###### Device info\n\n**Device label** - ${entityLabel}   \n**Device type**- ${Type}  \n**Created time** - {{ ${createdTime} | date:'full' }}\n\n",
             "markdownTextFunction": "return '# Some title\\\\n - Entity name: ' + data[0]['entityName'];",
             "applyDefaultMarkdownStyle": true,
             "markdownCss": ""
