@@ -55,6 +55,7 @@ The custom dashboard I created is saved as **"proiectdashboard.json"**. It provi
 - **Control Panel**  
   Includes a button to **start** or **stop** the background process that communicates with the sensor.
 
+**Note**: After the Python program that facilitates the MQTT connection is stopped, ThingsBoard will still display the device as active for a period of time.
 
 ## Bibliography / Resources  
 **Documentation / Datasheets:**  
