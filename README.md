@@ -25,7 +25,7 @@ To adapt the Python program to your ThingsBoard setup, change the values of the 
 Python code snippet:  
   
 ```
-ACCESS_TOKEN = "7tUZaVu6iZFxLUcYRc53"
+ACCESS_TOKEN = "ACCESS_TOKEN"
 THINGSBOARD_SERVER = 'demo.thingsboard.io'
 ```
 
